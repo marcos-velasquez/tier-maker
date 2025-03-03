@@ -1,101 +1,51 @@
-# TierMaker
+# TierMaker App 🎯
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+## Presentación General
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+**TierMaker** es una herramienta en línea diseñada para permitir a los usuarios crear sus propias plantillas de niveles, comúnmente conocidas como "tier lists". Estas plantillas son ideales para clasificar elementos en diferentes niveles según criterios específicos como calidad, preferencia personal, popularidad, entre otros. 🏆
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+---
 
-## Run tasks
+## Partes de un tier maker
 
-To run the dev server for your app, use:
+- **Título**: El título de la plantilla de niveles.
+- **Niveles**: Las filas horizontales que representan los diferentes niveles de clasificación.
+- **Elementos**: Las imágenes que se arrastran y colocan en los diferentes niveles.
 
-```sh
-npx nx serve tier-maker
-```
+## Funciones del Sistema
 
-To create a production bundle:
+- **Cambiar Título** 📝: Los usuarios pueden cambiar el nombre de su TierList para reflejar el tema o propósito específico de su clasificación.
+- **Agregar Elementos** 📂: Los usuarios pueden agregar elementos a la TierList para clasificarlos en los diferentes niveles.
+- **Arrastrar y Colocar Elementos** 🖱️: Nuestra interfaz intuitiva permite a los usuarios arrastrar y soltar elementos en los diferentes niveles según sus preferencias o criterios de clasificación (S,A,B,C,D,E,F).
+- **Resetear Niveles** 🔄: Opción de reiniciar toda la información de la lista, permitiendo a los usuarios comenzar de nuevo.
+- **Descargar en Formato PNG** 💾: Los usuarios tienen la posibilidad de descargar sus tier lists en formato PNG.
 
-```sh
-npx nx build tier-maker
-```
+---
 
-To see all available targets to run for a project, run:
+## Modelo del Dominio
 
-```sh
-npx nx show project tier-maker
-```
+![DomainModel](./out/docs/DomainModel/index/DomainModel.png 'DomainModel')
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+## Casos de Uso
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+![UseCases](./out/docs/UseCases/index/UseCases.png 'UseCases')
 
-## Add new projects
+### Cambiar Título
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+![ChangeTitleUseCase](./out/docs/UseCases/specifications/ChangeTitle/index/ChangeTitleUseCase.png 'ChangeTitleUseCase')
 
-Use the plugin's generator to create new projects.
+### InsertElement
 
-To generate a new application, use:
+![InsertElementUseCase](./out/docs/UseCases/specifications/InsertElement/index/InsertElementUseCase.png 'InsertElementUseCase')
 
-```sh
-npx nx g @nx/angular:app demo
-```
+### Reset
 
-To generate a new library, use:
+![ResetUseCase](./out/docs/UseCases/specifications/Reset/index/ResetUseCase.png 'ResetUseCase')
 
-```sh
-npx nx g @nx/angular:lib mylib
-```
+### Download
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+![DownloadUseCase](./out/docs/UseCases/specifications/Download/index/DownloadUseCase.png 'DownloadUseCase')
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### MoveElement
 
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+![MoveElementUseCase](./out/docs/UseCases/specifications/MoveElement/index/MoveElementUseCase.png 'MoveElementUseCase')

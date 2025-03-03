@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { NgxSonnerToaster } from 'ngx-sonner';
+import { TierMakerComponent } from './presenter/views/tier-maker.component';
 
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [NgxSonnerToaster, TierMakerComponent],
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  template: '<app-tier-maker />   <ngx-sonner-toaster richColors/>',
 })
 export class AppComponent {
   title = 'tier-maker';
