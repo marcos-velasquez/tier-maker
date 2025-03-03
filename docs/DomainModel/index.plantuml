@@ -9,7 +9,7 @@ class ElementList {}
 TierMaker *-- TierList 
 TierMaker *-- ElementList 
 
-TierList o-- Tier 
+TierList o-- "(S,A,B,C,D,E,F)" Tier 
 ElementList o-- "*" Element
 
 ElementList <|-- Tier
